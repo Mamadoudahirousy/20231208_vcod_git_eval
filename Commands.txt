@@ -62,5 +62,47 @@ git commit -m "C32"
 git push origin DEV
 
 ### 4- Merge
+# Committer les modifications
+git add package.json
+git commit -m "C4"
+
+# Fusionner la branche DEV dans la branche main
+git merge origin/DEV
+
+# Pousser les modifications sur GitHub
+git push origin main
 
 ### 5- Detached HEAD
+
+# Assurez-vous d'être sur la branche 'main'
+git checkout main
+# Ajoutez la dépendance dans "requirements.txt"
+echo 'ma dependance' >> requirements.txt
+# Ajoutez le fichier au suivi de Git
+git add requirements.txt
+# Committez avec le message "C6"
+git commit -m "C6"
+
+# Assurez-vous d'être sur la branche 'main'
+git checkout main
+# Réinitialisez HEAD au commit "C5"
+git reset --hard C5
+
+echo '<xml>Contenu de votre choix</xml>' > MANIFEST.xml
+# Ajoutez le fichier au suivi de Git
+git add MANIFEST.xml
+# Committez avec le message "D51"
+git commit -m "D51"
+# Faites un autre commit avec le message "D52"
+# Vous pouvez ajouter/modifier quelque chose dans le fichier MANIFEST.xml
+echo '<xml>Autre contenu</xml>' > MANIFEST.xml
+git add MANIFEST.xml
+git commit -m "D52"
+
+# Créez une branche "detached" sur le commit actuel
+git checkout -b detached
+
+# Poussez la branche "detached" sur GitHub
+git push origin detached
+
+
